@@ -1,0 +1,66 @@
+{
+  "tasks": [
+    {
+      "task": "NR-AR",
+      "model_file": "NR-AR.joblib"
+    },
+    {
+      "task": "NR-AR-LBD",
+      "model_file": "NR-AR-LBD.joblib"
+    },
+    {
+      "task": "NR-AhR",
+      "model_file": "NR-AhR.joblib"
+    },
+    {
+      "task": "NR-Aromatase",
+      "model_file": "NR-Aromatase.joblib"
+    },
+    {
+      "task": "NR-ER",
+      "model_file": "NR-ER.joblib"
+    },
+    {
+      "task": "NR-ER-LBD",
+      "model_file": "NR-ER-LBD.joblib"
+    },
+    {
+      "task": "NR-PPAR-gamma",
+      "model_file": "NR-PPAR-gamma.joblib"
+    },
+    {
+      "task": "SR-ARE",
+      "model_file": "SR-ARE.joblib"
+    },
+    {
+      "task": "SR-ATAD5",
+      "model_file": "SR-ATAD5.joblib"
+    },
+    {
+      "task": "SR-HSE",
+      "model_file": "SR-HSE.joblib"
+    },
+    {
+      "task": "SR-MMP",
+      "model_file": "SR-MMP.joblib"
+    },
+    {
+      "task": "SR-p53",
+      "model_file": "SR-p53.joblib"
+    }
+  ],
+  "feature_config": {
+    "featurization": "fp+descriptors",
+    "fp_bits": 2048,
+    "fp_radius": 2,
+    "descriptors": [
+      "MolWt",
+      "MolLogP",
+      "NumHAcceptors",
+      "NumHDonors",
+      "TPSA"
+    ],
+    "split": "scaffold",
+    "model_type": "GradientBoostingClassifier"
+  }
+}

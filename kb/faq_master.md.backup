@@ -1,0 +1,194 @@
+## FAQ: Pharma knowledge base — curated Q→A pairs with provenance
+
+---
+
+### General glossary & basics
+**Q1: What does ADME stand for?**  
+A: Absorption, Distribution, Metabolism, and Excretion — the four key processes that determine drug exposure.  
+*Source: glossary_pharma.md*
+
+**Q2: What is LogP and why is it important?**  
+A: LogP measures lipophilicity and influences solubility, permeability, and toxicity.  
+*Source: glossary_pharma.md, logp_tox.md*
+
+**Q3: What is TPSA?**  
+A: TPSA is Topological Polar Surface Area; >140 Å² often indicates poor oral absorption.  
+*Source: glossary_pharma.md, admet_interpretation.md*
+
+**Q4: What is a toxicophore?**  
+A: A structural motif linked to toxicity due to reactivity or metabolic activation.  
+*Source: glossary_pharma.md, toxophores_common.md*
+
+**Q5: What is SMILES notation?**  
+A: A string-based way to encode molecular structure for computational use.  
+*Source: glossary_pharma.md*
+
+---
+
+### Solubility
+**Q6: What level of solubility is considered poor?**  
+A: Kinetic solubility < 10 µM is often poor for oral candidates.  
+*Source: solubility.md*
+
+**Q7: How can I improve solubility?**  
+A: Add ionizable groups, reduce aromatic planarity, or introduce polar atoms.  
+*Source: solubility.md, heuristics_and_mitigation.md*
+
+**Q8: Why does lipophilicity reduce solubility?**  
+A: Lipophilic compounds prefer lipid phases over water, reducing aqueous solubility.  
+*Source: solubility.md, logp_tox.md*
+
+**Q9: Does high solubility always mean good druggability?**  
+A: No — it must be balanced with permeability and metabolic stability.  
+*Source: solubility.md, admet_interpretation.md*
+
+---
+
+### BBBP
+**Q10: What does BBBP stand for?**  
+A: Blood–Brain Barrier Penetration — a measure of CNS access.  
+*Source: glossary_pharma.md, bbbp.md*
+
+**Q11: What TPSA range supports BBB penetration?**  
+A: TPSA < 90 Å² generally favors penetration.  
+*Source: bbbp.md*
+
+**Q12: How can I reduce BBB penetration if unwanted?**  
+A: Increase polarity, reduce LogP, or design as a P-gp substrate.  
+*Source: bbbp.md, heuristics_and_mitigation.md*
+
+**Q13: Why is P-gp important for BBB predictions?**  
+A: P-gp efflux pumps substrates out of the brain, reducing penetration.  
+*Source: glossary_pharma.md, bbbp.md*
+
+---
+
+### LogP and toxicity
+**Q14: Why is high LogP a risk for toxicity?**  
+A: LogP >4–5 increases nonspecific binding, solubility issues, and off-target activity.  
+*Source: logp_tox.md*
+
+**Q15: What LogP range is often desirable for oral drugs?**  
+A: Around 1–3 balances permeability and solubility.  
+*Source: logp_tox.md, admet_interpretation.md*
+
+**Q16: Can very low LogP be a liability?**  
+A: Yes — LogP <0 often results in poor permeability despite good solubility.  
+*Source: logp_tox.md*
+
+---
+
+### Toxophores
+**Q17: Why are nitroaromatics risky?**  
+A: They can form reactive metabolites associated with genotoxicity.  
+*Source: toxophores_common.md*
+
+**Q18: What is a Michael acceptor and why avoid it?**  
+A: An α,β-unsaturated carbonyl; it’s electrophilic and can covalently bind biomolecules.  
+*Source: toxophores_common.md*
+
+**Q19: Why are anilines considered problematic?**  
+A: They may undergo oxidative bioactivation to toxic intermediates.  
+*Source: toxophores_common.md*
+
+**Q20: What’s the issue with thioureas?**  
+A: They can form reactive sulfur species linked with idiosyncratic toxicity.  
+*Source: toxophores_common.md*
+
+---
+
+### Assays
+**Q21: What does ER assay activation mean?**  
+A: It suggests estrogen receptor agonism or antagonism — possible endocrine disruption.  
+*Source: assay_descriptions.md*
+
+**Q22: Why is PXR activation significant?**  
+A: It indicates risk of drug–drug interactions through enzyme induction.  
+*Source: assay_descriptions.md*
+
+**Q23: What does AhR activation mean?**  
+A: Engagement of xenobiotic pathways with potential downstream transcriptional changes.  
+*Source: assay_descriptions.md*
+
+**Q24: Why should cytotoxicity be checked with pathway signals?**  
+A: A pathway hit with high cytotoxicity may be an artifact, not a true effect.  
+*Source: assay_descriptions.md*
+
+---
+
+### ADMET interpretation
+**Q25: What does a high developability score mean?**  
+A: It suggests favorable solubility, LogP, and clearance profile relative to others.  
+*Source: admet_interpretation.md, howtos_admet_score.md*
+
+**Q26: What does low solubility imply in practice?**  
+A: Likely poor oral absorption and formulation challenges.  
+*Source: solubility.md, admet_interpretation.md*
+
+**Q27: What does high BBBP prediction imply?**  
+A: Strong CNS penetration — good for brain drugs, a liability for others.  
+*Source: bbbp.md, admet_interpretation.md*
+
+**Q28: Why is TPSA important?**  
+A: It predicts passive permeability — high TPSA reduces oral absorption.  
+*Source: admet_interpretation.md*
+
+---
+
+### Model scope and limitations
+**Q29: Can these models predict dose-dependent toxicity?**  
+A: No — they provide intrinsic property predictions, not dose–response effects.  
+*Source: model_scope_and_limitations.md*
+
+**Q30: Do predictions account for metabolites?**  
+A: No — metabolism and species-specific effects are not fully modeled.  
+*Source: model_scope_and_limitations.md*
+
+**Q31: Are large peptides or metal complexes covered?**  
+A: They fall outside the model’s training domain and predictions may be unreliable.  
+*Source: model_scope_and_limitations.md*
+
+---
+
+### Practical heuristics
+**Q32: How do I reduce lipophilicity?**  
+A: Use polar isosteres, remove aromatic rings, or add polar groups.  
+*Source: heuristics_and_mitigation.md*
+
+**Q33: How can I reduce metabolic liabilities?**  
+A: Block metabolic hotspots or deuterate labile positions.  
+*Source: heuristics_and_mitigation.md*
+
+**Q34: How to lower CNS penetration?**  
+A: Increase polarity, TPSA, or design for efflux by P-gp.  
+*Source: heuristics_and_mitigation.md, bbbp.md*
+
+---
+
+### Regulatory notes
+**Q35: Why is the Ames test important?**  
+A: It screens for mutagenicity and is a regulatory requirement.  
+*Source: regulatory_notes_short.md*
+
+**Q36: What does hERG screening test for?**  
+A: It checks for cardiac QT prolongation risk.  
+*Source: regulatory_notes_short.md*
+
+**Q37: Why are CYP assays run early?**  
+A: To flag drug–drug interaction risks via inhibition or induction.  
+*Source: regulatory_notes_short.md*
+
+---
+
+### How-to workflows
+**Q38: How should I use the developability score?**  
+A: For ranking compounds within a series, not as an absolute decision.  
+*Source: howtos_admet_score.md*
+
+**Q39: What steps should I take if a compound is flagged unsafe?**  
+A: Inspect Tox21 pathways, SHAP drivers, and toxicophore presence.  
+*Source: faq_common_questions.md, toxophores_common.md*
+
+**Q40: How to iteratively improve a compound flagged by ADMET?**  
+A: Make minimal edits, rescore properties, and validate experimentally.  
+*Source: heuristics_and_mitigation.md, howtos_admet_score.md*

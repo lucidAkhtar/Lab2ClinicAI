@@ -1,0 +1,34 @@
+{
+  "feature_config": {
+    "featurization": "fp+5desc",
+    "fp_bits": 2048,
+    "fp_radius": 2,
+    "descriptors": [
+      "MolWt",
+      "MolLogP",
+      "NumHAcceptors",
+      "NumHDonors",
+      "TPSA"
+    ]
+  },
+  "datasets": [
+    {
+      "name": "esol",
+      "type": "regression",
+      "model_file": "esol.joblib",
+      "task": "logS"
+    },
+    {
+      "name": "lipo",
+      "type": "regression",
+      "model_file": "lipo.joblib",
+      "task": "logD"
+    },
+    {
+      "name": "bbbp",
+      "type": "classification",
+      "model_file": "bbbp.joblib",
+      "task": "BBBP"
+    }
+  ]
+}
