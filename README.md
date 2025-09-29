@@ -1,6 +1,6 @@
 # 🧬 Lab2Clinic AI: Advanced Molecular Intelligence Platform 
 
-## [Lab2Clinic App is here](https://lab2clinicai.streamlit.app/)
+## [Lab2Clinic App](https://lab2clinicai.streamlit.app/)
 
 Lab2Clinic AI is a powerful, enterprise-grade web application built with Streamlit and RDKit, designed to accelerate the early stages of drug discovery. It provides real-time prediction, visualization, and interpretation of molecular properties and safety profiles for novel chemical entities.
 
